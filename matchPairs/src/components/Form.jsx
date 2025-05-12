@@ -1,7 +1,11 @@
-import React from 'react'
+import RegularButton from "./RegularButton";
 
-export default function Form() {
+export default function Form({ handleSubmit }) {
   return (
-    <div>Form</div>
+    <form className="wrapper">
+        <RegularButton handleClick={handleSubmit}>
+            Start Game
+        </RegularButton>
+    </form>
   )
-}
+};
