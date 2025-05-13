@@ -6,7 +6,8 @@ import MemoryCard from './components/MemoryCard';
 function App() {
   const [isGameOn, setIsGameOn] = useState(false);
   const [ emojisData, setEmojisData] = useState([]);
-
+  
+  console.log(emojisData)
   async function startGame(e) {
     e.preventDefault()
     try{
@@ -16,7 +17,9 @@ function App() {
       }
 
       const data = await response.json()
-      console.log(data)
+      const dataSample = data.slice(0,12)
+      
+      setEmojisData(dataSample)
       setIsGameOn(true)
     } catch {
       console.log(e)
