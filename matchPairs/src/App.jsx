@@ -7,7 +7,7 @@ function App() {
   const [isGameOn, setIsGameOn] = useState(false);
   const [ emojisData, setEmojisData] = useState([]);
   
-  console.log(emojisData)
+  
   async function startGame(e) {
     e.preventDefault()
     try{
@@ -18,6 +18,7 @@ function App() {
 
       const data = await response.json()
       const dataSample = data.slice(0,10)
+      console.log(getRandomNumbers(data))
       
       setEmojisData(dataSample)
       setIsGameOn(true)
@@ -25,6 +26,19 @@ function App() {
       console.log(e)
     }
     
+  };
+
+  function getRandomNumbers(data){
+    const randomNumbersArray = [];
+
+    for(let i = 0; i < 10; i++){
+      const randomNums = Math.floor(Math.random() * data.length)
+      if(!randomNumbersArray.includes(randomNums)){
+        randomNumbersArray.push(randomNums)
+      }else{
+        i--      }
+    }
+    return randomNumbersArray;
   };
 
   function turnCard() {
