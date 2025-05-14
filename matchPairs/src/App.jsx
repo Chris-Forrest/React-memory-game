@@ -17,7 +17,7 @@ function App() {
       }
 
       const data = await response.json()
-      const dataSample = data.slice(0,12)
+      const dataSample = data.slice(0,10)
       
       setEmojisData(dataSample)
       setIsGameOn(true)
