@@ -17,8 +17,8 @@ function App() {
       }
 
       const data = await response.json()
-      const dataSlice = getRandomEmojis(data)
-      const emojisArray = getEmojisArray(dataSlice)
+      const dataSlice = await getRandomEmojis(data)
+      const emojisArray = await getEmojisArray(dataSlice)
       
       setEmojisData(emojisArray)
       setIsGameOn(true)
@@ -28,7 +28,7 @@ function App() {
     
   };
 
-  function getRandomNumbers(data){
+  async function getRandomNumbers(data){
     const randomNumbersArray = [];
 
     for(let i = 0; i < 10; i++){
@@ -41,13 +41,13 @@ function App() {
     return randomNumbersArray;
   };
 
-  function getRandomEmojis(data){
+   function getRandomEmojis(data){
     const emojisForGameplay = getRandomNumbers(data);
 
     return emojisForGameplay.map(index => data[index])
   };
 
-  function getEmojisArray (data){
+  async function getEmojisArray (data){
     const pairedEmojisArray = [...data, ...data]
 
     for (let i = pairedEmojisArray.length - 1; i > 0; i--){
