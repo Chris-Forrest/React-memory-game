@@ -18,8 +18,9 @@ function App() {
 
       const data = await response.json()
       const dataSlice = getRandomEmojis(data)
+      const emojisArray = getEmojisArray(dataSlice)
       
-      setEmojisData(dataSlice)
+      setEmojisData(emojisArray)
       setIsGameOn(true)
     } catch {
       console.log(e)
@@ -44,6 +45,20 @@ function App() {
     const emojisForGameplay = getRandomNumbers(data);
 
     return emojisForGameplay.map(index => data[index])
+  };
+
+  function getEmojisArray (data){
+    const pairedEmojisArray = [...data, ...data]
+
+    for (let i = pairedEmojisArray.length - 1; i > 0; i--){
+      const j = Math.floor(Math.random() * (i + 1))
+      const temp = pairedEmojisArray[i]
+      pairedEmojisArray[i] = pairedEmojisArray[j]
+      pairedEmojisArray[j] = temp 
+    }
+
+    return pairedEmojisArray;
+
   };
 
   function turnCard() {
