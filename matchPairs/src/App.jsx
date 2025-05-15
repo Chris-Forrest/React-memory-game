@@ -41,7 +41,7 @@ function App() {
     return randomNumbersArray;
   };
 
-   function getRandomEmojis(data){
+  async function getRandomEmojis(data){
     const emojisForGameplay = getRandomNumbers(data);
 
     return emojisForGameplay.map(index => data[index])
