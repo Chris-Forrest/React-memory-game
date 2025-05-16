@@ -61,8 +61,8 @@ function App() {
 
   };
 
-  function turnCard() {
-    console.log("Memory card clicked")
+  function turnCard(name, index) {
+    console.log(`The emoji ${name} at index ${index} has been clicked`)
   };
   
 
