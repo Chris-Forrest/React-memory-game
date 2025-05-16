@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Form from './components/Form';
 import MemoryCard from './components/MemoryCard';
 
@@ -8,6 +8,10 @@ function App() {
   const [ emojisData, setEmojisData] = useState([]);
   const [selectedCards, setSelecetedCards ] = useState([]);
   
+
+  useEffect(() => {
+
+  }, [selectedCards]);
   
   async function startGame(e) {
     e.preventDefault()
