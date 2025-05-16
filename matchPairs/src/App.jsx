@@ -6,6 +6,7 @@ import MemoryCard from './components/MemoryCard';
 function App() {
   const [isGameOn, setIsGameOn] = useState(false);
   const [ emojisData, setEmojisData] = useState([]);
+  const [selectedCards, setSelecetedCards ] = useState([]);
   
   
   async function startGame(e) {
@@ -62,9 +63,17 @@ function App() {
   };
 
   function turnCard(name, index) {
-    console.log(`The emoji ${name} at index ${index} has been clicked`)
+    
+    const selectedCardEntry = selectedCards.find(emoji => emoji.index === index);
+    
+    if (!selectedCardEntry && selectedCards.length < 2) {
+      setSelecetedCards(prevSelectedCards => [...prevSelectedCards, {name, index}]) 
+    
+    }else if (!selectedCardEntry && selectedCards.length ===2){
+      setSelecetedCards([{ name: name, index: index }]);
+    }
   };
-  
+  console.log(selectedCards);
 
   return (
     <main>
