@@ -8,7 +8,7 @@ export default function MemoryCard({ handleClick, data }) {
     >
         <button
             className="btn btn--emoji"
-            onClick={handleClick}
+            onClick={() => handleClick(emoji.name, index)}
         >
             {decodeEntity( emoji.htmlCode[0])}
         </button>
