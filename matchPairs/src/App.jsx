@@ -7,10 +7,14 @@ function App() {
   const [isGameOn, setIsGameOn] = useState(false);
   const [ emojisData, setEmojisData] = useState([]);
   const [selectedCards, setSelecetedCards ] = useState([]);
+  const [matchedCards, setMatchedCards] = useState([]);
   
 
+  console.log(matchedCards);
   useEffect(() => {
-
+    if (selectedCards.length === 2 && selectedCards[0].name === selectedCards[1].name){
+      setMatchedCards(prevMatchedCards => [...prevMatchedCards, ...selectedCards])
+    }
   }, [selectedCards]);
   
   async function startGame(e) {
