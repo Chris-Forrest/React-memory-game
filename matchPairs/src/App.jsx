@@ -24,7 +24,6 @@ function App() {
     }
   }, [matchedCards]);
   
-  console.log(isGameOver);
   async function startGame(e) {
     e.preventDefault()
     try{
