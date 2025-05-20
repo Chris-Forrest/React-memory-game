@@ -10,7 +10,7 @@ function App() {
   const [matchedCards, setMatchedCards] = useState([]);
   
 
-  console.log(matchedCards);
+  
   useEffect(() => {
     if (selectedCards.length === 2 && selectedCards[0].name === selectedCards[1].name){
       setMatchedCards(prevMatchedCards => [...prevMatchedCards, ...selectedCards])
