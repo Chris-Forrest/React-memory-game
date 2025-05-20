@@ -3,7 +3,7 @@ import EmojiButton from './EmojiButton';
 
 export default function MemoryCard({ handleClick, data }) {
 
-    const emojiEl = data.map((emoji, index) => 
+    const cardEl = data.map((emoji, index) => 
     <li
         key={index} className="card-item"
     >
@@ -17,6 +17,6 @@ export default function MemoryCard({ handleClick, data }) {
     );
 
   return (
-    <ul className="card-container">{emojiEl}</ul>
+    <ul className="card-container">{cardEl}</ul>
   )
 };
