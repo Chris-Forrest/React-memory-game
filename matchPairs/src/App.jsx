@@ -8,6 +8,7 @@ function App() {
   const [ emojisData, setEmojisData] = useState([]);
   const [selectedCards, setSelecetedCards ] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);
+  const [isGameOver, setIsGameOver] = useState(false);
   
 
   
@@ -16,7 +17,14 @@ function App() {
       setMatchedCards(prevMatchedCards => [...prevMatchedCards, ...selectedCards])
     }
   }, [selectedCards]);
+
+  useEffect(() =>{
+    if (emojisData.length && matchedCards.length === emojisData.length){
+      setIsGameOver(true)
+    }
+  }, [matchedCards]);
   
+  console.log(isGameOver);
   async function startGame(e) {
     e.preventDefault()
     try{
