@@ -88,7 +88,6 @@ function App() {
       setSelecetedCards([{ name: name, index: index }]);
     }
   };
-  console.log(selectedCards);
 
   return (
     <main>
