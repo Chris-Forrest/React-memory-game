@@ -3,8 +3,8 @@ export default function EmojiButton ({ content, handleClick, selectedCardEntry, 
     const btnContent = selectedCardEntry || matchedCardEntry ? content : "?"
 
     const btnStyle = matchedCardEntry ? "btn--emoji__back--matched":
-        selectedCardEntry ? "btn--emohi__back--matched":
-        "btn--emohi__font"
+        selectedCardEntry ? "btn--emoji__back--matched":
+        "btn--emoji__font"
 
     return (
         <button
