@@ -17,6 +17,7 @@ export default function MemoryCard({ handleClick, data, selectedCards, matchedCa
                     handleClick={() => handleClick(emoji.name, index)}
                     selectedCardEntry={selectedCardEntry}
                     matchedCardEntry={matchedCardEntry}
+                    index={index}
                 />
             </li>
         )
