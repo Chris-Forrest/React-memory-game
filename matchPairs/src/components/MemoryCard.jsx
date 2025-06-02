@@ -1,4 +1,4 @@
-import EmojiButton from './EmojiButton'
+import EmojiButton from './EmojiButton';
 
 export default function MemoryCard({ handleClick, data, selectedCards, matchedCards }) {
     const cardEl = data.map((emoji, index) => {
